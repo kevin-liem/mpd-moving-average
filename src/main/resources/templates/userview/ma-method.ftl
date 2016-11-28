@@ -50,139 +50,61 @@
 							<div class="ui violet inverted segment">
 								Model Input
 							</div>
-							<div class="ui segment">
-								<div class="ui form">									
-									<div class="inline fields">
-										<label>Input manual </label>
-										<div class="ui checkbox">
-										<input type="checkbox">
+                            <form action="/" name="form_ma" id="form_ma">
+								<div class="ui segment">
+									<div class="ui form">
+										<div class="inline fields">
+											<label>Input manual </label>
+											<div class="ui checkbox">
+												<input type="checkbox" name="input_manual" id="input_manual">
+											</div>
+										</div>
+										<div class="inline fields">
+											<label>n manual </label>
+											<div class="ui checkbox">
+												<input type="checkbox" name="n_manual" id="n_manual">
+											</div>
+										</div>
+										<div class="inline fields">
+											<label>Inputkan n </label>
+											<div class="ui mini input">
+												<input type="number" placeholder="n" style="text-align:center; width: 50px;" name="jml_n" id="jml_n">
+											</div>
+										</div>
+										<table style="margin-top: 0px;width: calc(30% + 1.1px);" class="ui celled structured table">
+											<thead>
+											<tr>
+												<th>t</th>
+												<th>d(t)</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td><input type="number" name="t1" id="t1"></td>
+												<td><input type="number" name="dt1" id="dt1"></td>
+											</tr>
+											</tbody>
+										</table>
+										<div class="inline fields">
+											<label>T manual </label>
+											<div class="ui checkbox">
+												<input type="checkbox" name="T_manual" id="T_manual">
+											</div>
+										</div>
+										<div class="inline fields">
+											<label>Inputkan T </label>
+											<div class="ui mini input">
+												<input type="number" placeholder="n" style="text-align:center; width: 50px;" name="T" id="T">
+											</div>
 										</div>
 									</div>
-									<div class="inline fields">
-										<label>n manual </label>
-										<div class="ui checkbox">
-										<input type="checkbox">
-										</div>
-									</div>									
-									<div class="inline fields">
-										<label>Inputkan n </label>
-										<div class="ui mini input">
-											<input type="text" placeholder="n" style="text-align:center; width: 50px;">
-										</div>
-									</div>
-									<table style="margin-top: 0px;width: calc(30% + 1.1px);" class="ui celled structured table">
-									<thead>
-										<tr>
-											<th>t</th>
-											<th>d(t)</th>
-										</tr>
-									</thead>
-									  <tbody>
-									    <tr>
-									      <td>1</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>2</td>
-									      <td>3</td>
-									    </tr>
-									    <tr>
-									      <td>3</td>
-									      <td>3</td>
-									    </tr>
-									    <tr>
-									      <td>4</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>5</td>
-									      <td>2</td>
-									    </tr>
-									    <tr>
-									      <td>6</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>7</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>8</td>
-									      <td>4</td>
-									    </tr>
-									    <tr>
-									      <td>9</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>10</td>
-									      <td>1</td>
-									    </tr>
-									    <tr>
-									      <td>11</td>
-									      <td>3</td>
-									    </tr>
-									    <tr>
-									      <td>12</td>
-									      <td>2</td>
-									    </tr>
-									  </tbody>
-									</table>
-									<div class="inline fields">
-										<label>T manual </label>
-										<div class="ui checkbox">
-										<input type="checkbox">
-										</div>
-									</div>	
-									<div class="inline fields">
-										<label>Inputkan T </label>
-										<div class="ui mini input">
-											<input type="text" placeholder="n" style="text-align:center; width: 50px;">
-										</div>
-									</div>
-									<table style="margin-top: 0px;width: calc(15% + 1.1px);" class="ui celled structured table">
-									<thead>
-										<tr>
-											<th>T</th>
-										</tr>
-									</thead>
-									  <tbody>
-									    <tr>
-									      <td>2</td>
-									    </tr>
-									    <tr>
-									      <td>3</td>
-									    </tr>
-									    <tr>
-									      <td>4</td>
-									    </tr>
-									    <tr>
-									      <td>5</td>
-									    </tr>
-									    <tr>
-									      <td>6</td>
-									    </tr>
-									    <tr>
-									      <td>7</td>
-									    </tr>
-									    <tr>
-									      <td>8</td>
-									    </tr>
-									    <tr>
-									      <td>9</td>
-									    </tr>
-									    <tr>
-									      <td>10</td>
-									    </tr>
-									  </tbody>
-									</table>
 								</div>
-							</div>
-							<div class="ui right aligned segment">
-								<button class="ui secondary button" type="submit">Cancel</button>
-								<a href="default.html"><button class="ui primary button" type="submit">Submit</button></a>
-							</div>
-						</div><!-- segments -->						
+								<div class="ui right aligned segment">
+									<button class="ui secondary button" type="submit">Cancel</button>
+									<button class="ui primary button" type="submit">Submit</button>
+								</div>
+                            </form>
+						</div><!-- segments -->
 					</div><!-- column -->
 				</div>
 			</div>
