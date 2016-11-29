@@ -2,16 +2,16 @@
 <html>
 <head>
 	<title>Moving Average</title>
-	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/fontawesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/jqvmap/jqvmap.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/daterangepicker/daterangepicker.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/datatables/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/datatables/css/dataTables.semanticui.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="plugins/fullcalendar/fullcalendar.min.css">
-	<link rel="stylesheet" type="text/css" href="plugins/fullcalendar/fullcalendar.print.css" media='print'>
-	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/jqvmap/jqvmap.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/daterangepicker/daterangepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/datatables/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/datatables/css/dataTables.semanticui.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/fullcalendar/fullcalendar.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/fullcalendar/fullcalendar.print.css" media='print'>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
 
 	<style type="text/css">
 		footer div.ui.dark-gray, footer div.ui.inverted.segment{
