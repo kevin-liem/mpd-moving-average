@@ -79,10 +79,7 @@
 											</tr>
 											</thead>
 											<tbody id="tabel_tdt_body">
-											<tr>
-												<td><input type="number" name="t1" id="t1"></td>
-												<td><input type="number" name="dt1" id="dt1"></td>
-											</tr>
+											
 											</tbody>
 										</table>
 										<div class="inline fields">
@@ -129,7 +126,9 @@
     <script type="text/javascript">
 		var jml_n = document.getElementById("jml_n");
 		jml_n.addEventListener("keydown", function (e) {
+
 			if(e.keyCode === 13){
+                e.preventDefault();
 				generate_table_n();
 			}
         });
@@ -139,10 +138,11 @@
 			for(var i = 0;i < n; i++){
 			    $("#tabel_tdt_body").append("<tr>" +
 						"<td><input type='number' name='tvalue[]' </td>" +
-						"<td><input type='number' name='dtvalue[]' </td>"
+						"<td><input type='number' name='dtvalue[]' </td>" +
 						"</tr>"
 				);
 			}
+//			alert(n);
         }
 	</script>
 
