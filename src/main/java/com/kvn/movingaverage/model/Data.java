@@ -7,14 +7,17 @@ import java.util.List;
 public class Data {
 	private int id;
 	private Object xAxis;
-	private List<Object> yAxis;
+	private Object yAxis;
+	private List<PredictionData> T;
 	
 	public Data(Object xAxis, Object yAxis) {
 		super();
 		this.xAxis = xAxis;
 		
 		yAxis = new LinkedList<Object>();
-		this.yAxis.add(yAxis);
+		this.yAxis = yAxis;
+
+		T = new LinkedList<PredictionData>();
 	}
 
 	public int getId() {
@@ -38,15 +41,17 @@ public class Data {
 	}
 
 	public void setyAxis(Object yAxis) {
-		this.yAxis.add(yAxis);
+		this.yAxis = yAxis;
 	}
-	
-	public void setyAxis(int index, Object yAxis) {
-		if(this.yAxis.size() < index){
-			this.yAxis.set(index, yAxis);
+
+	public List<PredictionData> getT(){ return T; }
+
+	public void setT(int index, PredictionData value) {
+		if(this.T.size() < index){
+			this.T.set(index, value);
 		}
 		else {
-			this.yAxis.add(yAxis);
+			this.T.add(value);
 		}
 	}
 }
