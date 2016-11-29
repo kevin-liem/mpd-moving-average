@@ -50,7 +50,7 @@
 							<div class="ui violet inverted segment">
 								Model Input
 							</div>
-                            <form action="/" name="form_ma" id="form_ma">
+                            <form action="/userview/hasil" name="form_ma" id="form_ma">
 								<div class="ui segment">
 									<div class="ui form">
 										<div class="inline fields">
@@ -71,14 +71,14 @@
 												<input type="number" placeholder="n" style="text-align:center; width: 50px;" name="jml_n" id="jml_n">
 											</div>
 										</div>
-										<table style="margin-top: 0px;width: calc(30% + 1.1px);" class="ui celled structured table">
+										<table style="margin-top: 0px;width: calc(30% + 1.1px);" class="ui celled structured table" id="tabel_tdt">
 											<thead>
 											<tr>
 												<th>t</th>
 												<th>d(t)</th>
 											</tr>
 											</thead>
-											<tbody>
+											<tbody id="tabel_tdt_body">
 											<tr>
 												<td><input type="number" name="t1" id="t1"></td>
 												<td><input type="number" name="dt1" id="dt1"></td>
@@ -100,7 +100,7 @@
 									</div>
 								</div>
 								<div class="ui right aligned segment">
-									<button class="ui secondary button" type="submit">Cancel</button>
+									<a href="/"><button class="ui secondary button">Cancel</button></a>
 									<button class="ui primary button" type="submit">Submit</button>
 								</div>
                             </form>
@@ -126,5 +126,25 @@
 	<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
 	<script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+		var jml_n = document.getElementById("jml_n");
+		jml_n.addEventListener("keydown", function (e) {
+			if(e.keyCode === 13){
+				generate_table_n();
+			}
+        });
+
+		function generate_table_n() {
+			var n = $("#jml_n").val();
+			for(var i = 0;i < n; i++){
+			    $("#tabel_tdt_body").append("<tr>" +
+						"<td><input type='number' name='tvalue[]' </td>" +
+						"<td><input type='number' name='dtvalue[]' </td>"
+						"</tr>"
+				);
+			}
+        }
+	</script>
+
 </body>
 </html>

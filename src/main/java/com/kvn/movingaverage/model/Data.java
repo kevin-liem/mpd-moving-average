@@ -3,6 +3,7 @@ package com.kvn.movingaverage.model;
 import java.util.LinkedList;
 import java.util.List;
 
+// Represent one record in Table
 public class Data {
 	private int id;
 	private Object xAxis;
