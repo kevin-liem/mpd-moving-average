@@ -1,14 +1,14 @@
 package com.kvn.movingaverage;
 
 public class TimeseriesData {
-	private int n;
-	private int T;
+	private Integer n;
+	private Integer T;
 
 	public TimeseriesData() {
 		
 	}
 
-	public TimeseriesData(int n, int t) {
+	public TimeseriesData(Integer n, Integer t) {
 		this.n = n;
 		T = t;
 	}
@@ -17,7 +17,7 @@ public class TimeseriesData {
 		return n;
 	}
 
-	public void setN(int n) {
+	public void setN(Integer n) {
 		this.n = n;
 	}
 
@@ -25,7 +25,7 @@ public class TimeseriesData {
 		return T;
 	}
 
-	public void setT(int t) {
+	public void setT(Integer t) {
 		T = t;
 	}
 }

@@ -26,14 +26,42 @@ public class ControllerData {
 		if(input_manual != null){
 			// Check if user want to input n manually
 			if(n_manual != null){
-				// Check if n value is inputed
+				// Check if n value is not valid
 				if(jml_n == null || jml_n <= 0){
-					DataContainer.getInstance().getTimeSeriesData().setN(0);
+                    // Flag it as null
+                    // To be given default value at logic
+					DataContainer.getInstance().getTimeSeriesData().setN(null);
 				}
 				// If it is inputed correctly then
 				else {
 					DataContainer.getInstance().getTimeSeriesData().setN(jml_n);
 				}
+			}
+			// If user want default value
+			else {
+                // Flag it as null
+                // To be given default value at logic
+				DataContainer.getInstance().getTimeSeriesData().setN(null);
+			}
+
+			// Check if user want to see certain T table
+			if(T_manual != null){
+				// Check if T value is not valid
+				if(T <= 1){
+					// Gives default value which is null
+					// It will be determined later with minimum value
+					DataContainer.getInstance().getTimeSeriesData().setT(null);
+				}
+				// If it is inputed correctly then
+				else {
+					DataContainer.getInstance().getTimeSeriesData().setT(T);
+				}
+			}
+			// If user want default value
+			else {
+				// Gives default value which is null
+				// It will be determined later with minimum value
+				DataContainer.getInstance().getTimeSeriesData().setT(null);
 			}
 		}
 
