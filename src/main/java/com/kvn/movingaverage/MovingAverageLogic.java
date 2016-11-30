@@ -1,22 +1,38 @@
 package com.kvn.movingaverage;
 
 import com.kvn.movingaverage.model.Data;
+import com.kvn.movingaverage.model.PredictionData;
 import jdk.internal.util.xml.impl.Input;
 
 public class MovingAverageLogic {
-	public void CalculateDataSeries(){
+	public static void CalculateDataSeries(){
 		Integer n = DataContainer.getInstance().getTimeSeriesData().getN();
-		if(n == null){
-			n = 12;
-			InputDefaultValue();
-		}
 
 		Integer T = DataContainer.getInstance().getTimeSeriesData().getT();
+		int Tmax;
+		if(T <= 0){
+			Tmax = 10;
+		}
+		else {
+			Tmax = T;
+		}
 
-		DataContainer.getInstance().getDaoData().getById(3).setyAxis(3);
+		for (int i = 3; i <= n; i++){
+			for(int j = 2; j < i; j++){
+				Float Taksen = 0f;
+				for (int k = i - j; k < n; k++){
+					Taksen += DataContainer.getInstance().getDaoData().getById(k).getyAxis().floatValue();
+				}
+				Taksen /= j + 1;
+
+				Float err = Taksen - DataContainer.getInstance().getDaoData().getById(i).getyAxis();
+
+				DataContainer.getInstance().getDaoData().getById(i).getT().add(new PredictionData(Taksen, err));
+			}
+		}
 	}
 
-	private void InputDefaultValue(){
+	public static void InputDefaultValue(){
 		DataContainer.getInstance().getDaoData().save(new Data(1, 1));
 		DataContainer.getInstance().getDaoData().save(new Data(2, 3));
 		DataContainer.getInstance().getDaoData().save(new Data(3, 3));

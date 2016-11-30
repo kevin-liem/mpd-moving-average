@@ -63,18 +63,31 @@
 											<th>error T=${Tdata}</th>
 										</tr>
 									</thead>
-									  <tbody id="main_table_body">
-									  <#if datainput??>
-										  <#list datainput as data>
-											  <tr>
-												  <td>${data.xAxis}</td>
-												  <td>${data.yAxis}</td>
-												  <td></td>
-												  <td></td>
-											  </tr>
-										  </#list>
-									  </#if>
-									  </tbody>
+                                        <tbody id="main_table_body">
+                                          <#if datainput??>
+                                              <#list datainput as data>
+                                                  <tr>
+                                                      <td>${data.xAxis}</td>
+                                                      <td>${data.yAxis}</td>
+                                                      <td>
+                                                          <#if data.t?has_content>
+                                                              <#if data.t[3]??>
+                                                                <#if data.t[3].tvalue??>
+                                                                    ${data.t[3].tvalue}
+                                                                </#if>
+                                                              </#if>
+                                                          </#if>
+
+                                                      </td>
+                                                      <td>
+                                                          <#--<#if data.T[0].errorValue??>-->
+                                                              <#--${data.T[0].errorValue}-->
+                                                          <#--</#if>-->
+                                                      </td>
+                                                  </tr>
+                                              </#list>
+                                          </#if>
+                                        </tbody>
 									  <tfoot>
 									    <th colspan="20">
 									      <div class="ui right floated pagination menu">
