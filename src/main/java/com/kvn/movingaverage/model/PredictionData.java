@@ -4,22 +4,27 @@ package com.kvn.movingaverage.model;
  * Created by deepn on 11/29/2016.
  */
 public class PredictionData {
-    private Integer Tvalue;
-    private Integer errorValue;
+    private Float Tvalue;
+    private Float errorValue;
 
-    public Integer getTvalue() {
+    public PredictionData(Float tvalue, Float errorValue) {
+        Tvalue = tvalue;
+        this.errorValue = errorValue;
+    }
+
+    public Float getTvalue() {
         return Tvalue;
     }
 
-    public void setTvalue(Integer tvalue) {
+    public void setTvalue(Float tvalue) {
         Tvalue = tvalue;
     }
 
-    public Integer getErrorValue() {
+    public Float getErrorValue() {
         return errorValue;
     }
 
-    public void setErrorValue(Integer errorValue) {
+    public void setErrorValue(Float errorValue) {
         this.errorValue = errorValue;
     }
 }

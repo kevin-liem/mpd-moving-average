@@ -26,7 +26,7 @@ public class Data {
 		this.id = id;
 	}
 
-	public Object getxAxis() {
+	public Integer getxAxis() {
 		return xAxis;
 	}
 
@@ -34,7 +34,7 @@ public class Data {
 		this.xAxis = xAxis;
 	}
 
-	public Object getyAxis() {
+	public Integer getyAxis() {
 		return yAxis;
 	}
 
