@@ -33,7 +33,7 @@ public class ControllerData {
 				if(jml_n == null || jml_n <= 0){
                     // Flag it as null
                     // To be given default value at logic
-					DataContainer.getInstance().getTimeSeriesData().setN(null);
+					DataContainer.getInstance().getTimeSeriesData().setN(12);
 					MovingAverageLogic.InputDefaultValue();
 				}
 				// If it is inputed correctly then
@@ -49,7 +49,7 @@ public class ControllerData {
 			else {
                 // Flag it as null
                 // To be given default value at logic
-				DataContainer.getInstance().getTimeSeriesData().setN(null);
+				DataContainer.getInstance().getTimeSeriesData().setN(12);
                 MovingAverageLogic.InputDefaultValue();
 			}
 
@@ -59,7 +59,7 @@ public class ControllerData {
 				if(T <= 1){
 					// Gives default value which is null
 					// It will be determined later with minimum value
-					DataContainer.getInstance().getTimeSeriesData().setT(null);
+					DataContainer.getInstance().getTimeSeriesData().setT(-1);
 				}
 				// If it is inputed correctly then
 				else {
@@ -70,14 +70,20 @@ public class ControllerData {
 			else {
 				// Gives default value which is null
 				// It will be determined later with minimum value
-				DataContainer.getInstance().getTimeSeriesData().setT(null);
+				DataContainer.getInstance().getTimeSeriesData().setT(-1);
 			}
 		}
 		// If user do not want to input manually
 		else {
 		    // Gives all default value
             MovingAverageLogic.InputDefaultValue();
+
+            DataContainer.getInstance().getTimeSeriesData().setN(12);
+            MovingAverageLogic.InputDefaultValue();
+
+            DataContainer.getInstance().getTimeSeriesData().setT(-1);
         }
+
         model.addAttribute("datainput", DataContainer.getInstance().getDaoData().getAll());
 		if(T == null){
 		    model.addAttribute("Tdata", "x");
@@ -86,7 +92,8 @@ public class ControllerData {
             model.addAttribute("Tdata", T);
         }
 
-//        MovingAverageLogic maLog = new MovingAverageLogic();
+        MovingAverageLogic maLog = new MovingAverageLogic();
+//		maLog.CalculateDataSeries();
 		return "/userview/output";
 	}
 }
