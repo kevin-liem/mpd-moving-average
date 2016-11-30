@@ -59,83 +59,21 @@
 										<tr>
 											<th>t</th>
 											<th>d(t)</th>
-											<th>T=10</th>
-											<th>error T=10</th>
+											<th>T=${Tdata}</th>
+											<th>error T=${Tdata}</th>
 										</tr>
 									</thead>
-									  <tbody>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
-									    <tr>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									    </tr>
+									  <tbody id="main_table_body">
+									  <#if datainput??>
+										  <#list datainput as data>
+											  <tr>
+												  <td>${data.xAxis}</td>
+												  <td>${data.yAxis}</td>
+												  <td></td>
+												  <td></td>
+											  </tr>
+										  </#list>
+									  </#if>
 									  </tbody>
 									  <tfoot>
 									    <th colspan="20">

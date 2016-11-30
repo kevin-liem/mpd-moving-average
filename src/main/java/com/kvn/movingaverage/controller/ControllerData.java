@@ -1,6 +1,8 @@
 package com.kvn.movingaverage.controller;
 
 import com.kvn.movingaverage.DataContainer;
+import com.kvn.movingaverage.MovingAverageLogic;
+import com.kvn.movingaverage.model.Data;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +19,8 @@ public class ControllerData {
 	public String showResult(@RequestParam(value = "input_manual", required = false) String input_manual,
 							 @RequestParam(value = "n_manual",required = false) String n_manual,
 							 @RequestParam(value = "jml_n",required = false) Integer jml_n,
-							 // Param in table
+							 @RequestParam(value = "tvalue[]",required = false) Integer[] t,
+							 @RequestParam(value = "dtvalue[]",required = false) Integer[] dt,
 							 @RequestParam(value = "T_manual",required = false) String T_manual,
 							 @RequestParam(value = "T", required = false) Integer T,
 			Model model){
@@ -31,10 +34,15 @@ public class ControllerData {
                     // Flag it as null
                     // To be given default value at logic
 					DataContainer.getInstance().getTimeSeriesData().setN(null);
+					MovingAverageLogic.InputDefaultValue();
 				}
 				// If it is inputed correctly then
 				else {
 					DataContainer.getInstance().getTimeSeriesData().setN(jml_n);
+					DataContainer.getInstance().getDaoData().getAll().clear();
+					for (int i = 0; i < jml_n; i++){
+						DataContainer.getInstance().getDaoData().save(new Data(t[i], dt[i]));
+					}
 				}
 			}
 			// If user want default value
@@ -42,6 +50,7 @@ public class ControllerData {
                 // Flag it as null
                 // To be given default value at logic
 				DataContainer.getInstance().getTimeSeriesData().setN(null);
+                MovingAverageLogic.InputDefaultValue();
 			}
 
 			// Check if user want to see certain T table
@@ -64,7 +73,20 @@ public class ControllerData {
 				DataContainer.getInstance().getTimeSeriesData().setT(null);
 			}
 		}
+		// If user do not want to input manually
+		else {
+		    // Gives all default value
+            MovingAverageLogic.InputDefaultValue();
+        }
+        model.addAttribute("datainput", DataContainer.getInstance().getDaoData().getAll());
+		if(T == null){
+		    model.addAttribute("Tdata", "x");
+        }
+        else {
+            model.addAttribute("Tdata", T);
+        }
 
+//        MovingAverageLogic maLog = new MovingAverageLogic();
 		return "/userview/output";
 	}
 }
