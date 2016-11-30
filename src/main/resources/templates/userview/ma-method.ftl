@@ -55,19 +55,19 @@
 									<div class="ui form">
 										<div class="inline fields">
 											<label>Input manual </label>
-											<div class="ui checkbox">
+											<div class="ui checkbox" id="wrapper_input_manual">
 												<input type="checkbox" name="input_manual" id="input_manual">
 											</div>
 										</div>
-										<div class="inline fields">
+										<div class="inline fields" id="n_manual_area">
 											<label>n manual </label>
-											<div class="ui checkbox">
+											<div class="ui checkbox" id="wrapper_n_manual">
 												<input type="checkbox" name="n_manual" id="n_manual">
 											</div>
 										</div>
-										<div class="inline fields">
+										<div class="inline fields" id="jml_n_area">
 											<label>Inputkan n </label>
-											<div class="ui mini input">
+											<div class="ui mini input" id="wrapper_jml_n">
 												<input type="number" placeholder="n" style="text-align:center; width: 50px;" name="jml_n" id="jml_n">
 											</div>
 										</div>
@@ -79,16 +79,16 @@
 											</tr>
 											</thead>
 											<tbody id="tabel_tdt_body">
-											
+
 											</tbody>
 										</table>
-										<div class="inline fields">
+										<div class="inline fields" id="T_manual_area">
 											<label>T manual </label>
-											<div class="ui checkbox">
+											<div class="ui checkbox" id="wrapper_T_manual">
 												<input type="checkbox" name="T_manual" id="T_manual">
 											</div>
 										</div>
-										<div class="inline fields">
+										<div class="inline fields" id="T_area">
 											<label>Inputkan T </label>
 											<div class="ui mini input">
 												<input type="number" placeholder="n" style="text-align:center; width: 50px;" name="T" id="T">
@@ -124,6 +124,43 @@
 	<script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">
+		$("#n_manual_area").hide();
+        $("#jml_n_area").hide();
+        $("#tabel_tdt").hide();
+        $("#T_manual_area").hide();
+        $("#T_area").hide();
+
+		$("#wrapper_input_manual").checkbox({
+		    onChecked: function () {
+				$("#n_manual_area").show();
+                $("#T_manual_area").show();
+            },
+			onUnchecked: function () {
+                $("#n_manual_area").hide();
+                $("#T_manual_area").hide();
+            }
+		});
+
+		$("#wrapper_n_manual").checkbox({
+		    onChecked: function () {
+                $("#jml_n_area").show();
+                $("#tabel_tdt").show();
+			},
+			onUnchecked: function () {
+                $("#jml_n_area").hide();
+                $("#tabel_tdt").hide();
+            }
+		});
+
+        $("#wrapper_T_manual").checkbox({
+            onChecked: function () {
+                $("#T_area").show();
+            },
+            onUnchecked: function () {
+                $("#T_area").hide();
+            }
+        });
+
 		var jml_n = document.getElementById("jml_n");
 		jml_n.addEventListener("keydown", function (e) {
 
@@ -135,6 +172,7 @@
 
 		function generate_table_n() {
 			var n = $("#jml_n").val();
+            $("#tabel_tdt_body").html('');
 			for(var i = 0;i < n; i++){
 			    $("#tabel_tdt_body").append("<tr>" +
 						"<td><input type='number' name='tvalue[]' </td>" +
@@ -142,7 +180,6 @@
 						"</tr>"
 				);
 			}
-//			alert(n);
         }
 	</script>
 
