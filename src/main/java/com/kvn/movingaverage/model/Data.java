@@ -6,15 +6,13 @@ import java.util.List;
 // Represent one record in Table
 public class Data {
 	private int id;
-	private Object xAxis;
-	private Object yAxis;
+	private Integer xAxis;
+	private Integer yAxis;
 	private List<PredictionData> T;
 	
-	public Data(Object xAxis, Object yAxis) {
+	public Data(Integer xAxis, Integer yAxis) {
 		super();
 		this.xAxis = xAxis;
-		
-		yAxis = new LinkedList<Object>();
 		this.yAxis = yAxis;
 
 		T = new LinkedList<PredictionData>();
@@ -32,7 +30,7 @@ public class Data {
 		return xAxis;
 	}
 
-	public void setxAxis(Object xAxis) {
+	public void setxAxis(Integer xAxis) {
 		this.xAxis = xAxis;
 	}
 
@@ -40,7 +38,7 @@ public class Data {
 		return yAxis;
 	}
 
-	public void setyAxis(Object yAxis) {
+	public void setyAxis(Integer yAxis) {
 		this.yAxis = yAxis;
 	}
 
