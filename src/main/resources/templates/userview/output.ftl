@@ -169,26 +169,26 @@
 					</center>
 				</div>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="semantic/semantic.min.js"></script>
-	<script type="text/javascript" src="plugins/chartjs/Chart.bundle.min.js"></script>
-	<script type="text/javascript" src="plugins/jqvmap/jquery.vmap.min.js"></script>
-	<script type="text/javascript" src="plugins/jqvmap/maps/jquery.vmap.world.js"></script>
-	<script type="text/javascript" src="plugins/daterangepicker/moment.min.js"></script>
-	<script type="text/javascript" src="plugins/daterangepicker/daterangepicker.min.js"></script>
-	<script type="text/javascript" src="plugins/inputmask/jquery.inputmask.bundle.min.js"></script>
-	<script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="plugins/tinymce/tinymce.min.js"></script>
-	<script type="text/javascript" src="plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="plugins/datatables/js/dataTables.semanticui.min.js"></script>
-	<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
-	<script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/semantic/semantic.min.js"></script>
+	<script type="text/javascript" src="/plugins/chartjs/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="/plugins/jqvmap/jquery.vmap.min.js"></script>
+	<script type="text/javascript" src="/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script type="text/javascript" src="/plugins/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="/plugins/daterangepicker/daterangepicker.min.js"></script>
+	<script type="text/javascript" src="/plugins/inputmask/jquery.inputmask.bundle.min.js"></script>
+	<script type="text/javascript" src="/plugins/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="/plugins/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript" src="/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/plugins/datatables/js/dataTables.semanticui.min.js"></script>
+	<script type="text/javascript" src="/plugins/slick/slick.min.js"></script>
+	<script type="text/javascript" src="/plugins/fullcalendar/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
 
 	<script type="text/javascript">
 		function showModalStandart() {
 			$("#modal1").modal('show');
 		}
-		</script>
+	</script>
 </body>
 </html>
