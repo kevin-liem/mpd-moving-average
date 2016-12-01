@@ -71,18 +71,22 @@
                                                       <td>${data.yAxis}</td>
                                                       <td>
                                                           <#if data.t?has_content>
-                                                              <#if data.t[3]??>
-                                                                <#if data.t[3].tvalue??>
-                                                                    ${data.t[3].tvalue}
+                                                              <#if data.t[0]??>
+                                                                <#if data.t[0].tvalue??>
+                                                                    ${data.t[0].tvalue}
                                                                 </#if>
                                                               </#if>
                                                           </#if>
 
                                                       </td>
                                                       <td>
-                                                          <#--<#if data.T[0].errorValue??>-->
-                                                              <#--${data.T[0].errorValue}-->
-                                                          <#--</#if>-->
+														  <#if data.t?has_content>
+                                                              <#if data.t[0]??>
+															  <#if data.t[0].errorValue??>
+															  ${data.t[0].errorValue}
+															  </#if>
+														  </#if>
+                                                          </#if>
                                                       </td>
                                                   </tr>
                                               </#list>

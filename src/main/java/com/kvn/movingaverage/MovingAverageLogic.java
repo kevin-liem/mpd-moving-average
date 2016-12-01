@@ -20,12 +20,12 @@ public class MovingAverageLogic {
 		for (int i = 3; i <= n; i++){
 			for(int j = 2; j < i; j++){
 				Float Taksen = 0f;
-				for (int k = i - j; k < n; k++){
+				for (int k = i - j; k < i; k++){
 					Taksen += DataContainer.getInstance().getDaoData().getById(k).getyAxis().floatValue();
 				}
-				Taksen /= j + 1;
+				Taksen /= (float)j;
 
-				Float err = Taksen - DataContainer.getInstance().getDaoData().getById(i).getyAxis();
+				Float err = Math.abs(Taksen - DataContainer.getInstance().getDaoData().getById(i).getyAxis());
 
 				DataContainer.getInstance().getDaoData().getById(i).getT().add(new PredictionData(Taksen, err));
 			}

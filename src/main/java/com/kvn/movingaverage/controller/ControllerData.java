@@ -6,6 +6,7 @@ import com.kvn.movingaverage.model.Data;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,7 +16,7 @@ public class ControllerData {
 	public String userRequirement(Model model){
 		return "/userview/ma-method";
 	}
-	
+
 	@GetMapping(value="/userview/hasil")
 	public String showResult(@RequestParam(value = "input_manual", required = false) String input_manual,
 							 @RequestParam(value = "n_manual",required = false) String n_manual,
