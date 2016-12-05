@@ -87,8 +87,10 @@ public class ControllerData {
 		MovingAverageLogic.CalculateDataSeries();
 
         model.addAttribute("datainput", DataContainer.getInstance().getDaoData().getAll());
+        model.addAttribute("result", DataContainer.getInstance().getResultData());
+        model.addAttribute("timeseries", DataContainer.getInstance().getTimeSeriesData());
 		if(T == null){
-		    model.addAttribute("Tdata", "x");
+		    model.addAttribute("Tdata", DataContainer.getInstance().getResultData().getT());
         }
         else {
             model.addAttribute("Tdata", T);

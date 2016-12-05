@@ -71,9 +71,9 @@
                                                       <td>${data.yAxis}</td>
                                                       <td>
                                                           <#if data.t?has_content>
-                                                              <#if data.t[0]??>
-                                                                <#if data.t[0].tvalue??>
-                                                                    ${data.t[0].tvalue}
+                                                              <#if data.t[result.t-2]??>
+                                                                <#if data.t[result.t-2].tvalue??>
+                                                                    ${data.t[result.t-2].tvalue}
                                                                 </#if>
                                                               </#if>
                                                           </#if>
@@ -81,9 +81,9 @@
                                                       </td>
                                                       <td>
 														  <#if data.t?has_content>
-                                                              <#if data.t[0]??>
-															  <#if data.t[0].errorValue??>
-															  ${data.t[0].errorValue}
+                                                              <#if data.t[result.t-2]??>
+															  <#if data.t[result.t-2].errorValue??>
+															  ${data.t[result.t-2].errorValue}
 															  </#if>
 														  </#if>
                                                           </#if>
@@ -116,8 +116,8 @@
 								Kesimpulan :
 							</div>
 							<p>
-								Peramalan bulan ke n adalah  
-								dengan T =  dan error = 
+								Peramalan bulan ke ${timeseries.n + 1} adalah ${result.tvalue}
+								dengan T = ${result.t} dan error = ${result.errorValue}
 							</p>
 						</div>
 					</div>
