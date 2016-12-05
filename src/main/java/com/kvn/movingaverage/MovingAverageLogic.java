@@ -33,13 +33,12 @@ public class MovingAverageLogic {
 			}
 		}
 
+        Integer minT = 0;
+        Float minTvalue = 999999f;
+        Float minErrorValue = 999999f;
+        Float tmpError = 0f;
+        Float tmpT = 0f;
 		if(T <= 0){
-			Integer minT = 0;
-			Float minTvalue = 999999f;
-			Float minErrorValue = 999999f;
-			Float tmpError = 0f;
-			Float tmpT = 0f;
-
 			// Loop through T value
 			for (int i = 1; i < Tmax; i++){
 				int dataCount = 0;
@@ -65,11 +64,36 @@ public class MovingAverageLogic {
 				tmpT = 0f;
 				tmpError = 0f;
 			}
-			DataContainer.getInstance().getResultData().setN(n+1);
-			DataContainer.getInstance().getResultData().setT(minT);
-			DataContainer.getInstance().getResultData().setTvalue(minTvalue);
-			DataContainer.getInstance().getResultData().setErrorValue(minErrorValue);
 		}
+		else {
+		    int i = T - 1;
+            int dataCount = 0;
+
+            // Loop through data
+            for(int j = 0; j < n; j++){
+                // If no T value then skip this data
+                if(DataContainer.getInstance().getDaoData().getById(j+1).getT().size() < i){
+                    continue;
+                }
+                tmpT += DataContainer.getInstance().getDaoData().getById(j+1).getT().get(i-1).getTvalue();
+                tmpError += DataContainer.getInstance().getDaoData().getById(j+1).getT().get(i-1).getErrorValue();
+                dataCount++;
+            }
+
+            tmpT /= dataCount;
+            tmpError /= dataCount;
+            if(tmpError < minErrorValue){
+                minTvalue = tmpT;
+                minErrorValue = tmpError;
+                minT = i + 1;
+            }
+            tmpT = 0f;
+            tmpError = 0f;
+        }
+        DataContainer.getInstance().getResultData().setN(n+1);
+        DataContainer.getInstance().getResultData().setT(minT);
+        DataContainer.getInstance().getResultData().setTvalue(minTvalue);
+        DataContainer.getInstance().getResultData().setErrorValue(minErrorValue);
 	}
 
 	public static void InputDefaultValue(){

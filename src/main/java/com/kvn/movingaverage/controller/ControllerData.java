@@ -26,6 +26,7 @@ public class ControllerData {
 							 @RequestParam(value = "T_manual",required = false) String T_manual,
 							 @RequestParam(value = "T", required = false) Integer T,
 			Model model){
+        DataContainer.getInstance().getDaoData().getAll().clear();
 
 		// Check if user want to input manually
 		if(input_manual != null){
@@ -41,7 +42,6 @@ public class ControllerData {
 				// If it is inputed correctly then
 				else {
 					DataContainer.getInstance().getTimeSeriesData().setN(jml_n);
-					DataContainer.getInstance().getDaoData().getAll().clear();
 					for (int i = 0; i < jml_n; i++){
 						DataContainer.getInstance().getDaoData().save(new Data(t[i], dt[i]));
 					}
