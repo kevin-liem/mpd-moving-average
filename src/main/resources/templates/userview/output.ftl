@@ -27,7 +27,7 @@
 	<div class="line-top"></div>
 	<header class="ui labeled icon stackable tiny menu no-radius">
 		<div class="ui container">
-			<a class="item" href="ma-method.html"><i class="dashboard icon"></i>Dashboard</a>
+			<a class="item" href="/"><i class="dashboard icon"></i>Dashboard</a>
 			<div class="right menu">
 				<div class="ui dropdown item">
 					<i class="user icon"></i>
