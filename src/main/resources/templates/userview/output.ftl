@@ -27,24 +27,24 @@
 	<div class="line-top"></div>
 	<header class="ui labeled icon stackable tiny menu no-radius">
 		<div class="ui container">
-			<a class="item" href="/"><i class="dashboard icon"></i>Dashboard</a>
+			<a class="" href="/"><img style="width: 20%" src="/images/Logo_PENS.png" /></a>
 			<div class="right menu">
 				<div class="ui dropdown item">
 					<i class="user icon"></i>
-					Akun
+					Developer
 					<div class="menu">
-						<a class="item"><i class="sign out icon"></i> Keluar</a>
+						<a class="item"><i class="user icon"></i> Kevin Andrean 2103141055</a>
+                        <a class="item"><i class="user icon"></i> Nova Rizqi 2103141059</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<center>
 	<div class="ui container">
-		<h3 class="ui header title-page">Metode Moving Average</h3>
+		<h3 class="ui header title-page">Hasil Peramalan Penjualan Kaos PPSS</h3>
 	</div>
-	</center>
+
 		<div class="ui container">
 			<div class="ui stackable grid">
 					<div class="column">						
@@ -57,8 +57,8 @@
 									<table style="margin-top: 0px;width: calc(100% + 1.1px);" class="ui celled structured table">
 									<thead>
 										<tr>
-											<th>t</th>
-											<th>d(t)</th>
+											<th>Bulan ke-</th>
+											<th>Unit</th>
 											<th>T=${Tdata}</th>
 											<th>error T=${Tdata}</th>
 										</tr>
@@ -116,7 +116,7 @@
 								Kesimpulan :
 							</div>
 							<p>
-								Peramalan bulan ke ${timeseries.n + 1} adalah ${result.tvalue}
+								Peramalan penjualan kaos PPSS bulan ke-${timeseries.n + 1} adalah ${result.tvalue} unit
 								dengan T = ${result.t} dan error = ${result.errorValue}
 							</p>
 						</div>

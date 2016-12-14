@@ -26,19 +26,23 @@
 <body>
 	<div class="line-top"></div>
 	<header class="ui labeled icon stackable tiny menu no-radius">
-			<div class="right menu">
-				<div class="ui dropdown item">
-					<i class="user icon"></i>
-					Akun
-					<div class="menu">
-						<a class="item"><i class="sign out icon"></i> Keluar</a>
-					</div>
-				</div>
-			</div>
+        <div class="ui container">
+            <a class="" href="/"><img style="width: 20%" src="/images/Logo_PENS.png" /></a>
+            <div class="right menu">
+                <div class="ui dropdown item">
+                    <i class="user icon"></i>
+                    Developer
+                    <div class="menu">
+                        <a class="item"><i class="user icon"></i> Kevin Andrean 2103141055</a>
+                        <a class="item"><i class="user icon"></i> Nova Rizqi 2103141059</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</header>
 
 	<div class="ui container">
-		<h3 class="ui header title-page">Metode Moving Average</h3>
+		<h3 class="ui header title-page">Peramalan Penjualan Kaos PPSS</h3>
 	</div>
 
 	<div class="content">
