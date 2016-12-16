@@ -33,8 +33,8 @@
                     <i class="user icon"></i>
                     Developer
                     <div class="menu">
-                        <a class="item"><i class="user icon"></i> Kevin Andrean 2103141055</a>
-                        <a class="item"><i class="user icon"></i> Nova Rizqi 2103141059</a>
+                        <a href="https://www.facebook.com/kevin.andrean.52" class="item"><i class="user icon"></i> Kevin Andrean 2103141055</a>
+                        <a href="https://www.facebook.com/ovanqizri" class="item"><i class="user icon"></i> Nova Rizqi 2103141059</a>
                     </div>
                 </div>
             </div>
